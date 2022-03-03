@@ -23,7 +23,6 @@ let general send_request client connection (request : Message.request) =
        exist right now. *)
     let headers =
       Message.all_headers request
-      |> fun headers -> ("Transfer-Encoding", "chunked")::headers
       |> Httpaf.Headers.of_list
     and method_ =
       Httpaf.Method.of_string
