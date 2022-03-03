@@ -31,7 +31,7 @@ let request ?method_ ?headers ?(body = Stream.empty) target =
   Message.request ?method_ ~target ?headers Stream.null body
 
 (* TODO Rename this. *)
-let send = Hyper__http.Connect.no_pool ?transport:None
+let send = Hyper__http.Connect.no_pool ~transport:`HTTPS
 let run = send
 
 let body = Message.body
